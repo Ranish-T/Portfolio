@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranish T| Data Engineer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav class="navbar-container">  
+      <div class="navbar-logo">Ranish T</div>
+      <ul class="navbar-links flex flex-wrap justify-center md:justify-end gap-2 md:gap-6">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#tech-stack" class="nav-link">Skills</a></li>
+        <li><a href="Ranish CV.pdf" class="nav-link">Resume</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="home" class="hero-section min-h-screen">
+    <div class="hero-content mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hi, I'm Ranish <span class="wave">👋</span></h1>
+      <h2 class="text-lg sm:text-xl md:text-2xl mt-4">From chaos to clarity — I craft the flow.</h2>
+      <button class="scroll-btn mt-8" onclick="scrollToAbout()">Know more about me ↓</button>
+    </div>
+  </section>
+  <section id="about" class="about-section">
+    <div class="about-container container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="about-image">
+        <img src="Ranish_image.jpg" alt="Profile" class="profile-img" />
+      </div>
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>Hey! Hey, I’m Ranish — cooking up my way into the data engineering world!  
+            Not a pro yet, but I’ve already played around with Data Warehouse projects, dashboards, and some cool automation stuff. Currently leveling up in SQL, Python & the modern data stack — building skills to handle data like a boss 💻📊.</p>
+        <div class="tools-section">
+          <h3>Tools I’ve used:</h3>
+          <ul class="tools-list">
+            <li>Python</li>
+            <li>SQL Server</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects" class="projects-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl text-center mb-8">Projects</h2>
+      <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="project-card">
+          <h3>Data Warehouse Project</h3>
+          <p>Built a layered Data Warehouse using the Bronze, Silver, and Gold architecture to organize raw data into clean, reliable, and analysis-ready formats. Worked on data cleaning, transformation logic, and schema design using SQL. This project simulates how real-world data moves from ingestion to final business insights — supporting use cases like dashboards, ad-hoc queries, and ML pipelines.</p>
+          <div class="project-badges">
+            <span>SQL</span><span>Data Modeling</span><span>ETL</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Customer Complaint Classifier</h3>
+          <p>Automated classification of customer complaints using NLP and machine learning for faster resolution.</p>
+          <div class="project-badges">
+            <span>Python</span><span>Pandas</span><span>scikit-learn</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Customer Support Chatbot</h3>
+          <p>Developed a chatbot using rule-based logic and NLP to handle basic customer queries and automate support tasks. Built with Python and integrated with web interfaces for real-time interactions.</p>
+          <div class="project-badges">
+            <span>Python</span><span>NLP</span><span>Chatbot</span>
+          </div>
+          <a href="#" class="project-btn" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="tech-stack" class="techstack-section-custom">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="techstack-title text-2xl sm:text-3xl md:text-4xl text-center mb-4">Tech Stack</h2>
+      <p class="techstack-subtitle text-center mb-8">Tools I use to build scalable data solutions</p>
+      <div class="techstack-grid grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <button class="tech-btn">🐍 Python</button>
+        <button class="tech-btn">🗃️ SQL</button>
+        <button class="tech-btn">🔧 Git</button>
+        <button class="tech-btn">💾 DBMS</button>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact-section">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl text-center mb-4">Get in Touch</h2>
+      <p class="contact-subtitle text-center mb-8">Feel free to reach out for collaboration or opportunities!</p>
+      <form action="https://formspree.io/f/xrblygvv" method="POST" class="contact-form" autocomplete="off">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Type your message..."></textarea>
+        </div>
+        <!-- Honeypot field to prevent spam -->
+        <div style="display: none;">
+          <input type="text" name="_gotcha" />
+        </div>
+        <button type="submit" class="send-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="footer-content container mx-auto px-4 sm:px-6 lg:px-8">
+      <span>Designed &amp; Built by Ranish | © 2025</span>
+      
+      <span class="footer-icons flex flex-wrap justify-center gap-4">
+        <button 
+          class="footer-link" 
+          onclick="copyToClipboard('ranishlisha2005@gmail.com', 'email-tooltip', 'Email copied!')"
+          aria-label="Copy Email"
+          title="Copy Email"
+        >
+          📧
+          <span id="email-tooltip" class="absolute top-full left-1/2 transform -translate-x-1/2 text-xs text-cyan-400 opacity-0 transition-opacity mt-2">Copied!</span>
+        </button>
+        
+        <button 
+          class="footer-link" 
+          onclick="copyToClipboard('9043428805', 'phone-tooltip', 'Phone number copied!')"
+          aria-label="Copy Phone"
+          title="Copy Phone"
+        >
+          📱
+          <span id="phone-tooltip" class="absolute top-full left-1/2 transform -translate-x-1/2 text-xs text-cyan-400 opacity-0 transition-opacity mt-2">Copied!</span>
+        </button>
+        
+        <a href="https://www.linkedin.com/in/ranish-t-672967353/" class="footer-link" aria-label="LinkedIn" target="_blank">🔗</a>
+        <a href="https://github.com/Ranish11" class="footer-link" aria-label="GitHub" target="_blank">🐱</a>
+      </span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
