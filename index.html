@@ -10,23 +10,41 @@
 </head>
 <body>
   <header class="navbar">
-    <nav class="navbar-container">  
-      <div class="navbar-logo">Ranish T</div>
-      <ul class="navbar-links flex flex-wrap justify-center md:justify-end gap-2 md:gap-6">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#tech-stack" class="nav-link">Skills</a></li>
-        <li><a href="Ranish CV.pdf" class="nav-link">Resume</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+    <nav class="navbar-container flex items-center justify-between">  
+      <div class="navbar-logo text-lg md:text-2xl font-bold">Ranish T</div>
+      <ul class="navbar-links flex flex-row gap-2 md:flex-row md:justify-end md:gap-6">
+        <li class="block md:hidden">
+          <a href="Ranish CV.pdf" class="nav-link border-2 border-cyan-400 shadow-[0_0_4px_1px_rgba(34,211,238,0.35)] rounded-xl px-3 py-1 transition-all">
+            Resume
+          </a>
+        </li>
+        <li class="block md:hidden">
+          <a href="#contact" class="nav-link border-2 border-cyan-400 shadow-[0_0_4px_1px_rgba(34,211,238,0.35)] rounded-xl px-3 py-1 transition-all">
+            Contact
+          </a>
+        </li>
+        <li class="hidden md:block"><a href="#home" class="nav-link active">Home</a></li>
+        <li class="hidden md:block"><a href="#about" class="nav-link">About</a></li>
+        <li class="hidden md:block"><a href="#projects" class="nav-link">Projects</a></li>
+        <li class="hidden md:block"><a href="#tech-stack" class="nav-link">Skills</a></li>
+        <li class="hidden md:block"><a href="Ranish CV.pdf" class="nav-link">Resume</a></li>
+        <li class="hidden md:block"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </header>
-  <section id="home" class="hero-section min-h-screen">
-    <div class="hero-content mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Hi, I'm Ranish <span class="wave">👋</span></h1>
-      <h2 class="text-lg sm:text-xl md:text-2xl mt-4">From chaos to clarity — I craft the flow.</h2>
-      <button class="scroll-btn mt-8" onclick="scrollToAbout()">Know more about me ↓</button>
+  <section id="home" class="hero-section min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div class="hero-content w-full max-w-4xl text-center">
+      <h1 class="flex flex-col items-center text-xl sm:text-3xl md:text-5xl lg:text-6xl break-words leading-tight sm:leading-snug">
+        <span class="mb-1">Hi,</span>
+        <span class="flex items-center gap-2 mt-1">
+          <span class="whitespace-nowrap">I'm Ranish</span>
+          <span class="wave inline-block align-middle">👋</span>
+        </span>
+      </h1>
+      <h2 class="text-[0.85rem] sm:text-lg md:text-2xl font-normal mt-2 sm:mt-4 mb-4 sm:mb-6 opacity-80">
+        From chaos to clarity — I craft the flow.
+      </h2>
+      <button class="scroll-btn mt-4 sm:mt-8" onclick="scrollToAbout()">Know more about me ↓</button>
     </div>
   </section>
   <section id="about" class="about-section">
