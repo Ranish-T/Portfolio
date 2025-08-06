@@ -474,6 +474,10 @@ section {
   margin: 0 auto 2rem auto;
   border: 1.5px solid var(--border-primary);
 }
+.contact-form:hover {
+  box-shadow: 0 0 16px var(--shadow-glow), 0 4px 16px var(--shadow-primary);
+  transform: translateY(-4px) scale(1.02);
+}
 .form-group {
   display: flex;
   flex-direction: column;
