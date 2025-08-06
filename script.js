@@ -154,3 +154,63 @@ function showToast(message) {
   }, 3000);
 }
 
+// EmailJS Contact Form Integration (auto-dismiss success message)
+(function() {
+  // Load EmailJS SDK if not already loaded
+  if (!window.emailjs) {
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js';
+    script.onload = initEmailJS;
+    document.head.appendChild(script);
+  } else {
+    initEmailJS();
+  }
+
+  function initEmailJS() {
+    emailjs.init('LPJQgCusF3zaXFs8J');
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('form-status');
+    let successTimeout = null;
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      statusDiv.textContent = '';
+      // Validate fields
+      const from_name = form.from_name.value.trim();
+      const from_email = form.from_email.value.trim();
+      const message = form.message.value.trim();
+      if (!from_name || !from_email || !message) {
+        statusDiv.textContent = 'Please fill in all fields.';
+        statusDiv.className = 'text-center text-red-400 mb-2';
+        return;
+      }
+      if (!/^\S+@\S+\.\S+$/.test(from_email)) {
+        statusDiv.textContent = 'Please enter a valid email address.';
+        statusDiv.className = 'text-center text-red-400 mb-2';
+        return;
+      }
+      statusDiv.textContent = 'Sending...';
+      statusDiv.className = 'text-center text-cyan-400 mb-2';
+      emailjs.send('service_9wtii4d', 'template_y7rkpyp', {
+        from_name,
+        from_email,
+        message
+      })
+      .then(function() {
+        statusDiv.textContent = 'Message sent successfully!';
+        statusDiv.className = 'text-center text-green-400 mb-2';
+        form.reset();
+        if (successTimeout) clearTimeout(successTimeout);
+        successTimeout = setTimeout(function() {
+          statusDiv.textContent = '';
+        }, 3000);
+      }, function(error) {
+        statusDiv.textContent = 'Failed to send message. Please try again.';
+        statusDiv.className = 'text-center text-red-400 mb-2';
+        console.error('EmailJS error:', error);
+        alert('EmailJS error: ' + (error?.text || error));
+      });
+    });
+  }
+})();
+
