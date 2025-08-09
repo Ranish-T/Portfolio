@@ -101,24 +101,24 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Clipboard functionality for contact details
-function copyToClipboard(text, tooltipId, toastMessage) {
-  navigator.clipboard.writeText(text).then(() => {
-    // Show tooltip
-    const tooltip = document.getElementById(tooltipId);
-    if (tooltip) {
-      tooltip.style.opacity = '1';
-      
-      // Hide tooltip after 2 seconds
-      setTimeout(() => {
-        tooltip.style.opacity = '0';
-      }, 2000);
+function copyToClipboard(value, textSpanId, copiedText) {
+  navigator.clipboard.writeText(value).then(() => {
+    const textSpan = document.getElementById(textSpanId);
+    const btn = textSpan.closest('.copy-btn');
+    const original = textSpan.dataset.original || textSpan.textContent;
+
+    // Store original text if not already stored
+    if (!textSpan.dataset.original) {
+      textSpan.dataset.original = original;
     }
-    
-    // Show toast notification
-    showToast(toastMessage);
-  }).catch(err => {
-    console.error('Failed to copy text: ', err);
-    showToast('Failed to copy to clipboard');
+
+    textSpan.textContent = copiedText;
+    btn.classList.add('copied');
+
+    setTimeout(() => {
+      textSpan.textContent = textSpan.dataset.original;
+      btn.classList.remove('copied');
+    }, 1500);
   });
 }
 
