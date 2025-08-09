@@ -547,27 +547,43 @@ section {
   margin-top: 0.5rem;
 }
 .footer-link {
-  color: var(--primary);
-  font-size: 1.4rem;
-  background: var(--bg-overlay);
-  border: 1.5px solid var(--primary);
-  border-radius: 50%;
-  padding: 0.4rem 0.6rem;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.18s;
-  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #18191b;
+  transition: background 0.2s, box-shadow 0.2s;
+  font-size: 1.2rem;
+  color: #bdbdbd;
   position: relative;
-  cursor: pointer;
-  border: none;
-  outline: none;
 }
-.footer-link:hover {
-  background: var(--primary);
-  color: var(--text-dark);
-  box-shadow: 0 0 4px var(--shadow-hover);
-  transform: scale(1.08);
+.footer-link:hover,
+.footer-link:focus {
+  background: #22d3ee; /* cyan-400 */
+  color: #18191b;
+  box-shadow: 0 0 0 4px #22d3ee33;
+}
+
+.icon-wrapper {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.linkedin-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* === Animations === */
@@ -580,5 +596,39 @@ section {
 .section-animated {
   opacity: 1 !important;
   transform: none !important;
+}
+
+/* === Copy Button Styles === */
+.copy-btn {
+  @apply relative flex items-center justify-center px-4 py-2 rounded transition-colors duration-200;
+  background: transparent;
+  border: none;
+  min-width: 110px; /* Ensures width doesn't shrink on text change */
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.copy-btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.copy-btn-icon {
+  font-size: 1.2em;
+}
+
+.copy-btn-text {
+  display: inline-block;
+  min-width: 48px; /* Enough for 'Copied!' or 'Email'/'Phone' */
+  text-align: left;
+  transition: color 0.2s;
+}
+
+.copy-btn.copied .copy-btn-text {
+  color: #06b6d4; /* Tailwind cyan-400 */
+  font-weight: 600;
 }
 
