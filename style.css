@@ -184,18 +184,28 @@ section {
 /* === Mobile Responsive Styles === */
 @media (max-width: 767px) {
   .navbar-container {
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+  }
+  
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   
   .mobile-toggle {
     display: flex;
-    order: 2;
+    order: 3;
   }
   
   .resume-link {
-    order: 1;
-    margin-left: auto;
-    margin-right: 1rem;
+    order: 2;
+    margin: 0;
+    white-space: nowrap;
   }
   
   .navbar-links {
@@ -213,8 +223,9 @@ section {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    order: 3;
+    order: 1;
     width: 100%;
+    z-index: 99;
   }
   
   .navbar-links.mobile-open {
@@ -240,18 +251,32 @@ section {
   }
 }
 
+/* === Navigation Wrapper === */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
 /* === Desktop Styles (unchanged) === */
 @media (min-width: 768px) {
   .mobile-toggle {
     display: none;
   }
   
-  .resume-link {
-    order: 2;
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
   }
   
   .navbar-links {
-    order: 1;
+    display: flex;
+    gap: 2.5rem;
+  }
+  
+  .resume-link {
+    margin: 0;
   }
 }
 
