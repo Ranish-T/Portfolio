@@ -13,24 +13,27 @@
     <nav class="navbar-container">  
       <div class="navbar-logo">Ranish T</div>
       
+      <!-- Desktop navigation wrapper -->
+      <div class="nav-wrapper">
+        <!-- Mobile menu (collapsible on mobile, normal on desktop) -->
+        <ul class="navbar-links flex flex-wrap justify-center md:justify-end gap-2 md:gap-6">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#tech-stack" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <!-- Resume link (always visible) -->
+        <a href="Ranish CV.pdf" class="nav-link resume-link">Resume</a>
+      </div>
+      
       <!-- Mobile toggle button (hidden on desktop) -->
       <button class="mobile-toggle md:hidden" aria-label="Toggle navigation" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-      
-      <!-- Resume link (always visible) -->
-      <a href="Ranish CV.pdf" class="nav-link resume-link">Resume</a>
-      
-      <!-- Mobile menu (collapsible on mobile, normal on desktop) -->
-      <ul class="navbar-links flex flex-wrap justify-center md:justify-end gap-2 md:gap-6">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#tech-stack" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
     </nav>
   </header>
   <section id="home" class="hero-section min-h-screen">
